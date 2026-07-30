@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-/// Central color palette for Flux Chip Cascade.
+/// Central color palette for Radiant Drop Path.
 /// Matches the dark circuit-board / neon aesthetic of the game art.
 class AppColors {
   AppColors._();

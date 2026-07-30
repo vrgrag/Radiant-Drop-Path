@@ -113,7 +113,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const SizedBox(height: 24),
           const Center(
-            child: Text('Flux Chip Cascade  ·  v1.0.0', style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
+            child: Text('Radiant Drop Path  ·  v1.0.0', style: TextStyle(color: AppColors.textSecondary, fontSize: 12)),
           ),
         ],
       ),

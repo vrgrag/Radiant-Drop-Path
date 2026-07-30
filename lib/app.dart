@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'relay/beam_router.dart';
 import 'services/audio_service.dart';
 import 'theme/app_theme.dart';
 import 'screens/loading/loading_screen.dart';
@@ -25,7 +26,9 @@ class Routes {
 }
 
 class RadiantDropPathApp extends StatefulWidget {
-  const RadiantDropPathApp({super.key});
+  const RadiantDropPathApp({super.key, this.router});
+
+  final BeamRouter? router;
 
   @override
   State<RadiantDropPathApp> createState() => _RadiantDropPathAppState();
@@ -70,7 +73,9 @@ class _RadiantDropPathAppState extends State<RadiantDropPathApp> with WidgetsBin
       onGenerateRoute: (settings) {
         switch (settings.name) {
           case Routes.loading:
-            return MaterialPageRoute(builder: (_) => const LoadingScreen());
+            return MaterialPageRoute(
+              builder: (_) => LoadingScreen(router: widget.router),
+            );
           case Routes.mainMenu:
             return MaterialPageRoute(builder: (_) => const MainMenuScreen());
           case Routes.levelSelect:
@@ -91,7 +96,9 @@ class _RadiantDropPathAppState extends State<RadiantDropPathApp> with WidgetsBin
             final initialTab = settings.arguments is int ? settings.arguments as int : 0;
             return MaterialPageRoute(builder: (_) => GuideScreen(initialTab: initialTab));
           default:
-            return MaterialPageRoute(builder: (_) => const LoadingScreen());
+            return MaterialPageRoute(
+              builder: (_) => LoadingScreen(router: widget.router),
+            );
         }
       },
     );

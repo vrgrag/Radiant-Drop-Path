@@ -1,0 +1,5 @@
+# Xcode rewrites this file with its own line endings; letting git normalise it
+# corrupts the project on macOS.
+*.pbxproj binary
+*.xcworkspacedata binary
+*.xcscheme binary

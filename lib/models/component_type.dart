@@ -14,7 +14,7 @@ enum ComponentType {
 }
 
 extension ComponentTypeX on ComponentType {
-  /// Folder name under assets/components/ holding the skin_N.png variants.
+  /// Folder name under assets/components/ holding the skin_N.webp variants.
   String get assetFolder {
     switch (this) {
       case ComponentType.amplifier:
@@ -194,7 +194,7 @@ extension ComponentTypeX on ComponentType {
   bool get needsDelayConfig => this == ComponentType.delay;
 
   /// Number of cosmetic skin variants available for this component
-  /// (see assets/components/&lt;folder&gt;/skin_0..N.png).
+  /// (see assets/components/&lt;folder&gt;/skin_0..N.webp).
   int get skinCount {
     switch (this) {
       case ComponentType.amplifier:

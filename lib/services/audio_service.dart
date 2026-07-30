@@ -7,7 +7,7 @@ class AudioService {
   AudioService._();
   static final AudioService instance = AudioService._();
 
-  final AudioPlayer _music = AudioPlayer(playerId: 'flux-music');
+  final AudioPlayer _music = AudioPlayer(playerId: 'rdp-music');
   String? _currentMusicAsset;
   bool _initialized = false;
 
