@@ -17,6 +17,16 @@ class AudioService {
     // directory (asset keys like `sounds/foo.mp3`). audioplayers' AudioCache
     // otherwise prepends `assets/`, which would make every path fail to load.
     AudioCache.instance.prefix = '';
+    // iOS defaults to the `playback` category, which overrides the Ring/Silent
+    // switch and stops whatever the user was listening to. A game should stay
+    // in the background of the system audio instead.
+    try {
+      await AudioPlayer.global.setAudioContext(
+        AudioContext(iOS: AudioContextIOS(category: AVAudioSessionCategory.ambient)),
+      );
+    } catch (_) {
+      // Non-fatal - fall back to the plugin defaults.
+    }
     await _music.setReleaseMode(ReleaseMode.loop);
     await _music.setVolume(musicVolume);
     _initialized = true;
